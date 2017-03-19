@@ -1,0 +1,7 @@
+E:\Development\VS\WordCount\WordCount.Model\bin\Debug\netcoreapp1.1\WordCount.Model.deps.json
+E:\Development\VS\WordCount\WordCount.Model\bin\Debug\netcoreapp1.1\WordCount.Model.dll
+E:\Development\VS\WordCount\WordCount.Model\bin\Debug\netcoreapp1.1\WordCount.Model.pdb
+E:\Development\VS\WordCount\WordCount.Model\obj\Debug\netcoreapp1.1\WordCount.Model.AssemblyInfo.cs
+E:\Development\VS\WordCount\WordCount.Model\obj\Debug\netcoreapp1.1\WordCount.Model.dll
+E:\Development\VS\WordCount\WordCount.Model\obj\Debug\netcoreapp1.1\WordCount.Model.pdb
+E:\Development\VS\WordCount\WordCount.Model\obj\Debug\netcoreapp1.1\WordCount.Model.csprojResolveAssemblyReference.cache

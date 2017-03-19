@@ -1,0 +1,13 @@
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Web.deps.json
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Web.runtimeconfig.json
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Web.runtimeconfig.dev.json
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Web.dll
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Web.pdb
+E:\Development\VS\WordCount\WordCount.Web\obj\Debug\netcoreapp1.1\WordCount.Web.csprojResolveAssemblyReference.cache
+E:\Development\VS\WordCount\WordCount.Web\obj\Debug\netcoreapp1.1\WordCount.Web.AssemblyInfo.cs
+E:\Development\VS\WordCount\WordCount.Web\obj\Debug\netcoreapp1.1\WordCount.Web.dll
+E:\Development\VS\WordCount\WordCount.Web\obj\Debug\netcoreapp1.1\WordCount.Web.pdb
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.ServiceManagers.dll
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.ServiceManagers.pdb
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Model.dll
+E:\Development\VS\WordCount\WordCount.Web\bin\Debug\netcoreapp1.1\WordCount.Model.pdb

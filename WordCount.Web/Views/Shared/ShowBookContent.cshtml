@@ -1,0 +1,52 @@
+﻿@model LoyalBooksTextViewModel
+
+<div class="panel-primary">
+    <div class="page-header">Words and their count</div>
+    <div class="panel-body">
+        <table class="table table-responsive table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                    <th>Is Prime</th>
+                </tr>
+            </thead>
+            <tbody id="wordsTableBody"></tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <a class="btn bg-info" id="btnGetNext" onclick="LoadMorePages()">Next</a>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            LoadMorePages();
+        });
+
+        function LoadMorePages() {
+            $.ajax({
+                Type: 'GET',
+                url: '/api/LoyalBooksData/',
+                dataType: 'json',
+                success: function (jsonData) {
+                    if (jsonData == null) {
+                        alert('no data returned');
+                        return;
+                    }
+
+                    $.each(jsonData, function (index, model) {
+                        var wordsString = '<tr>' +
+                            '<td>' + model.word + '</td>' +
+                            '<td>' + model.count + '</td>' +
+                            '<td>' + model.isPrimeNumber + '</td>' +
+                            '</tr>';
+                        $("#wordsTableBody").append(wordsString);
+                    });
+                }
+            });
+        }
+
+
+    </script>
+}

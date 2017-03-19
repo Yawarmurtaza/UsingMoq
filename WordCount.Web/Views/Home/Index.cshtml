@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="panel-heading">
+    <h1>Welcome to the word count</h1>
+    <div class="panel-body">
+        <a class="btn btn-primary" asp-controller="LoyalBooks" asp-action="ShowBookContent" asp-route-bookName="Railway-Children-by-E-Nesbit.txt">Railway Children</a>
+    </div>
+    
+    <hr/>
+    <div class="panel-body">
+        <a class="btn btn-primary" asp-controller="LoyalBooksParallel" asp-action="ShowBookContent" asp-route-bookName="Railway-Children-by-E-Nesbit.txt">Railway Children - Parallel</a>
+    </div>
+</div>
