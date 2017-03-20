@@ -18,9 +18,12 @@ namespace WordCount.Web.Controllers
             this.bookManager = serviceResolver.GetWebApiManagerByName();
         }
 
+/*
+http://localhost:9761/api/LoyalBooksData/5/bookName
+*/
         [HttpGet]
-        [Route("api/LoyalBooksData/{bookName}/{pageNumber}")]
-        public async Task<IEnumerable<WordOccurance>> NextTenWords(string bookName = null, int pageNumber = 10)
+        [Route("api/LoyalBooksData/{pageNumber}/{bookName}")]
+        public async Task<IEnumerable<WordOccurance>> NextTenWords(int pageNumber = 10, string bookName = null)
         {
             if (string.IsNullOrEmpty(bookName))
             {
