@@ -11,10 +11,8 @@ namespace WordCount.Web.Controllers
 {
     public class LoyalBooksController : BaseController
     {
-        private readonly IWebApiManager bookManager;
-        public LoyalBooksController(IDependencyResolver serviceResolver, IServiceProvider services) : base(services)
+        public LoyalBooksController(IServiceProvider services) : base(services)
         {
-            this.bookManager = serviceResolver.GetWebApiManagerByName();
         }
 
         public async Task<ActionResult> ShowBookContent(string bookName)
@@ -22,9 +20,10 @@ namespace WordCount.Web.Controllers
             this.Session.SetString("bookName", bookName);
             LoyalBooksTextViewModel model = new LoyalBooksTextViewModel();
 
-            model.WordCount = await this.bookManager.GetIndivisualWordsCount(bookName);
+            model.BookName = bookName;
 
             return this.View(model);
+            
         }
     }
 }

@@ -38,47 +38,5 @@ namespace WordCount.ServiceManagers
 
             return bookText;
         }
-
-
-        protected Dictionary<string, int> CountWords(string text)
-        {
-            Dictionary<string, int> wordOccurence = new Dictionary<string, int>();
-
-            char[] trimChars = new[] { '.', '\'', ',', '-', '?', '"', '/', ';', '!', ':', '(', ')', '_' };
-
-            int index = 0;
-            IList<char> charList = new List<char>();
-            while (index < text.Length)
-            {
-                while (index < text.Length && !char.IsWhiteSpace(text[index]) && text[index] != '-' && text[index] != '/')
-                {
-                    charList.Add(text[index]);
-                    index++;
-                }
-
-                if (charList.Any())
-                {
-                    string word = string.Join(string.Empty, charList).ToUpper().TrimEnd(trimChars).TrimStart(trimChars);
-
-                    if (wordOccurence.ContainsKey(word))
-                    {
-                        wordOccurence[word]++;
-                    }
-                    else
-                    {
-                        wordOccurence.Add(word, 1);
-                    }
-
-                    charList.Clear();
-                }
-                
-                while (index < text.Length && (char.IsWhiteSpace(text[index]) || text[index] == '-' || text[index] == '/'))
-                {
-                    index++;
-                }
-            }
-
-            return wordOccurence;
-        }
     }
 }

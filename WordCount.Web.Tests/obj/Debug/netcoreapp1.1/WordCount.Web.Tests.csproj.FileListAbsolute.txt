@@ -1,6 +1,3 @@
-E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\xunit.runner.utility.netstandard15.dll
-E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\xunit.runner.reporters.netstandard15.dll
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.Web.Tests.deps.json
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.Web.Tests.runtimeconfig.json
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.Web.Tests.runtimeconfig.dev.json
@@ -16,3 +13,6 @@ E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCoun
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.Model.pdb
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.ServiceManagers.pdb
 E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\WordCount.Web.pdb
+E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Development\VS\WordCount\WordCount.Web.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

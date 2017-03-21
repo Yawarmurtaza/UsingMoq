@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount.Web", "WordCount.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount.Model", "WordCount.Model\WordCount.Model.csproj", "{A91E0040-062C-4DDD-9BE7-99661930C311}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7CC63666-4753-482C-9A2A-026D57EDFA48}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Tests", "1. Tests", "{7CC63666-4753-482C-9A2A-026D57EDFA48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount.Web.Tests", "WordCount.Web.Tests\WordCount.Web.Tests.csproj", "{66DEE875-3CFF-4B47-9201-37E6D25FD06A}"
 EndProject

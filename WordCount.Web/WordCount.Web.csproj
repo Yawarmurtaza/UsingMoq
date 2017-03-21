@@ -29,8 +29,5 @@
     <ProjectReference Include="..\WordCount.Model\WordCount.Model.csproj" />
     <ProjectReference Include="..\WordCount.ServiceManagers\WordCount.ServiceManagers.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Loyalbooks\" />
-  </ItemGroup>
 
 </Project>

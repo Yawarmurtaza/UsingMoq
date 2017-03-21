@@ -1,0 +1,63 @@
+﻿@model LoyalBooksTextViewModel
+
+<div class="panel-primary">
+    <div class="page-header">
+        <h1>@Model.BookName</h1>
+        <h2>Words and their count @this.Model.OperationName </h2>
+    </div>
+</div>
+    <div class="panel-body">
+        <table class="table table-responsive table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                    <th>Is Prime</th>
+                </tr>
+            </thead>
+            <tbody id="wordsTableBody"></tbody>
+            @*@foreach (WordOccurance nextItem in Model.WordCount)
+                {
+                    @await Html.PartialAsync("WordCount", nextItem)
+                }*@
+        </table>
+    </div>
+    <div class="panel-footer">
+        <a class="btn bg-info" id="btnGetNext" onclick="LoadMorePages()">Next</a>
+    </div>
+
+@section scripts{
+    <script type="text/javascript">
+        var pageNumber = 0;
+        $(document).ready(function () {
+            LoadMorePages();
+        });
+
+        function LoadMorePages() {
+            pageNumber++;
+            $.ajax({
+                Type: 'GET',
+                url: '/api/LoyalBooksData/' + pageNumber + "/Railway-Children-by-E-Nesbit.txt",
+                dataType: 'json',
+                success: function (jsonData) {
+                    if (jsonData == null) {
+                        alert('no data returned');
+                        return;
+                    }
+
+                    var wordsString;
+                    $.each(jsonData, function (index, model) {
+                        wordsString += '<tr>' +
+                            '<td>' + model.word + '</td>' +
+                            '<td>' + model.count + '</td>' +
+                            '<td>' + model.primeNumberStatus + '</td>' +
+                            '</tr>';
+                    });
+                    $("#wordsTableBody").append(wordsString);
+                }
+            });
+        }
+
+
+    </script>
+}

@@ -1,0 +1,12 @@
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\UnitTestProject1.deps.json
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\UnitTestProject1.runtimeconfig.json
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\UnitTestProject1.runtimeconfig.dev.json
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\UnitTestProject1.dll
+E:\Development\VS\WordCount\UnitTestProject1\bin\Debug\netcoreapp1.1\UnitTestProject1.pdb
+E:\Development\VS\WordCount\UnitTestProject1\obj\Debug\netcoreapp1.1\UnitTestProject1.csprojResolveAssemblyReference.cache
+E:\Development\VS\WordCount\UnitTestProject1\obj\Debug\netcoreapp1.1\UnitTestProject1.AssemblyInfo.cs
+E:\Development\VS\WordCount\UnitTestProject1\obj\Debug\netcoreapp1.1\UnitTestProject1.dll
+E:\Development\VS\WordCount\UnitTestProject1\obj\Debug\netcoreapp1.1\UnitTestProject1.pdb

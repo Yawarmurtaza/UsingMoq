@@ -11,19 +11,20 @@ namespace WordCount.ServiceManagers
 {
     public class LoyalBooksWebApiManager : BaseLoyalBooksWebApiManager
     {
+        private readonly ITextProcessor textProcessor;
         private IEnumerable<WordOccurance> wordCount;
 
-        public LoyalBooksWebApiManager(IWebApiProcessor apiProcessor, IMemoryCache cache) : base(apiProcessor, cache)
+        public LoyalBooksWebApiManager(IWebApiProcessor apiProcessor, IMemoryCache cache, ITextProcessor textProcessor) : base(apiProcessor, cache)
         {
+            this.textProcessor = textProcessor;
         }
 
         public override async Task<IEnumerable<WordOccurance>> GetIndivisualWordsCount(string bookName)
         {
-            string text = await base.GetBookText(bookName);
-            
             if (!this.cache.TryGetValue(bookName, out this.wordCount))
             {
-                this.wordCount = base.CountWords(text).ConvertToWordOccurenceModel();
+                string text = await base.GetBookText(bookName);
+                this.wordCount = this.textProcessor.CountWords(text).ConvertToWordOccurenceModel();
                 this.cache.Set(bookName, this.wordCount, this.cacheEntryOptions);
             }
 

@@ -1,20 +1,21 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "4ff6772a7242821a91139312895588f345e251e1"
+    "signature": "2593165e5527a0be68dd0a7519146d698eb043ea"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.1": {
       "wordcount.web.tests/1.0.0": {
         "dependencies": {
+          "MSTest.TestAdapter": "1.1.13",
+          "MSTest.TestFramework": "1.1.13",
+          "Microsoft.Extensions.DependencyInjection": "1.1.0",
           "Microsoft.NET.Test.Sdk": "15.0.0",
           "Moq": "4.7.1",
           "WordCount.Model": "1.0.0",
           "WordCount.ServiceManagers": "1.0.0",
-          "WordCount.Web": "1.0.0",
-          "xunit": "2.2.0",
-          "xunit.runner.visualstudio": "2.2.0"
+          "WordCount.Web": "1.0.0"
         },
         "runtime": {
           "WordCount.Web.Tests.dll": {}
@@ -990,6 +991,13 @@
           "lib/netstandard1.3/Moq.dll": {}
         }
       },
+      "mstest.testadapter/1.1.13": {},
+      "mstest.testframework/1.1.13": {
+        "runtime": {
+          "lib/netcoreapp1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
+          "lib/netcoreapp1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
+        }
+      },
       "newtonsoft.json/9.0.1": {
         "dependencies": {
           "System.Runtime.Serialization.Primitives": "4.3.0"
@@ -1106,51 +1114,6 @@
       "system.xml.xpath.xmldocument/4.0.1": {
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
-        }
-      },
-      "xunit/2.2.0": {
-        "dependencies": {
-          "xunit.assert": "2.2.0",
-          "xunit.core": "2.2.0"
-        }
-      },
-      "xunit.abstractions/2.0.1": {
-        "runtime": {
-          "lib/netstandard1.0/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert/2.2.0": {
-        "runtime": {
-          "lib/netstandard1.1/xunit.assert.dll": {}
-        }
-      },
-      "xunit.core/2.2.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.2.0",
-          "xunit.extensibility.execution": "2.2.0"
-        }
-      },
-      "xunit.extensibility.core/2.2.0": {
-        "dependencies": {
-          "xunit.abstractions": "2.0.1"
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.2.0": {
-        "dependencies": {
-          "xunit.extensibility.core": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
-        }
-      },
-      "xunit.runner.visualstudio/2.2.0": {
-        "dependencies": {
-          "Microsoft.DotNet.PlatformAbstractions": "1.1.1",
-          "Microsoft.Extensions.DependencyModel": "1.1.1",
-          "Microsoft.TestPlatform.ObjectModel": "15.0.0"
         }
       },
       "wordcount.model/1.0.0": {
@@ -1759,6 +1722,20 @@
       "path": "moq/4.7.1",
       "hashPath": "moq.4.7.1.nupkg.sha512"
     },
+    "mstest.testadapter/1.1.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WNbOe5GQL9osCGJzhXKenGBTOftJWiEMgCEQGSkGsswFwmUUufQjDxGTM+WuViSI+TG5bcbeZe2uVJLrYPySMg==",
+      "path": "mstest.testadapter/1.1.13",
+      "hashPath": "mstest.testadapter.1.1.13.nupkg.sha512"
+    },
+    "mstest.testframework/1.1.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-puZmouEpcFHAETgo5ZXgdlQpIjgKu5eh0pUCwHd7eaX2tCbLQ4d+bHLl2x8P0CY75NvalidIZTlqs1yBgKau9g==",
+      "path": "mstest.testframework/1.1.13",
+      "hashPath": "mstest.testframework.1.1.13.nupkg.sha512"
+    },
     "newtonsoft.json/9.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1884,55 +1861,6 @@
       "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
-    },
-    "xunit/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DoB9o+x3erv1DGP+pSvrIC1pWg+23LeeG8nOGVldoF+qeWNqQbabc5jLfUWW4zLOsNZfvgHcmJIKuRcZMgoV+w==",
-      "path": "xunit/2.2.0",
-      "hashPath": "xunit.2.2.0.nupkg.sha512"
-    },
-    "xunit.abstractions/2.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-bDm/zdG5rnRDsobKuKwrvL4HccBdC0uvT12be6fG12P3d1U7u9Wkvfoq/PM2GeyIeb0Dtcmm/7k2oaawiqQ2Dg==",
-      "path": "xunit.abstractions/2.0.1",
-      "hashPath": "xunit.abstractions.2.0.1.nupkg.sha512"
-    },
-    "xunit.assert/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OZ1HADp3tv48wK+mPxdOr4kYPn3Y1RACYCWkX0IogKIyZ8fwLeLspVk9KdHfhqXGITnTvlMcOw6PmdRAwrUreQ==",
-      "path": "xunit.assert/2.2.0",
-      "hashPath": "xunit.assert.2.2.0.nupkg.sha512"
-    },
-    "xunit.core/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wuGOHofSt4sR/ros6N6S8FI2L9uuP5YsbcxM2kXpcRplMoY1pSgfEZaIRZm3NqDL/JJ/FHEksTEYkvxpc9H4Rw==",
-      "path": "xunit.core/2.2.0",
-      "hashPath": "xunit.core.2.2.0.nupkg.sha512"
-    },
-    "xunit.extensibility.core/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2bT3sG8obWbRm45NewcV+Sr2K1whj88LnjQT7szJx1DcydgKR86ggV5rIZ5NccCWo2ctZMRb0QMYttVrhrG9Gw==",
-      "path": "xunit.extensibility.core/2.2.0",
-      "hashPath": "xunit.extensibility.core.2.2.0.nupkg.sha512"
-    },
-    "xunit.extensibility.execution/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4gjTrSUd/F6/pdsMsf+a1f1tcaUQnr59JvZQulmF8VwQbCh34ifie3iqriYyKyLmTQDUEJ/ZTPeZEDh0pxpTLA==",
-      "path": "xunit.extensibility.execution/2.2.0",
-      "hashPath": "xunit.extensibility.execution.2.2.0.nupkg.sha512"
-    },
-    "xunit.runner.visualstudio/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CZimTpet23CeI2oXjDtICecAuEJ8Z4xSwNFY2tTKcGfm4IzKBrFmS3yzdqMMdAfiHYUgKlcyefflLOyO9ArKyQ==",
-      "path": "xunit.runner.visualstudio/2.2.0",
-      "hashPath": "xunit.runner.visualstudio.2.2.0.nupkg.sha512"
     },
     "wordcount.model/1.0.0": {
       "type": "project",

@@ -11,21 +11,20 @@ namespace WordCount.Web.Controllers
 {
     public class LoyalBooksParallelController : BaseController
     {
-        private readonly IWebApiManager bookManager;
-        
-        public LoyalBooksParallelController(IDependencyResolver serviceResolver, IServiceProvider services) : base(services)
+        public LoyalBooksParallelController(IServiceProvider services) : base(services)
         {
-            this.bookManager = serviceResolver.GetWebApiManagerByName(typeof(LoyalBooksWebApiParallelManager));
         }
 
-        public async Task<ActionResult> ShowBookContent(string bookName)
+        public ActionResult ShowBookContent(string bookName)
         {
             this.Session.SetString("bookName", bookName);
+            this.ViewBag.OperationName = "Parallel";
+
             LoyalBooksTextViewModel model = new LoyalBooksTextViewModel();
-
-            model.WordCount = await this.bookManager.GetIndivisualWordsCount(bookName);
-
+            model.OperationName = "| Parallel";
+            model.BookName = bookName;
             return this.View(model);
+            
         }
     }
 }

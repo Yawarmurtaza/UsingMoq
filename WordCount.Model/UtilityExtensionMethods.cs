@@ -12,7 +12,7 @@ namespace WordCount.Model
                 {
                     Word = word.Key,
                     Count = word.Value,
-                    IsPrimeNumber = word.Value == 1 ? "UNIT" : word.Value.IsPrime() ? "YES" : "NO"
+                    PrimeNumberStatus = word.Value == 1 ? "UNIT" : word.Value.IsPrime() ? "YES" : "NO"
                 });
 
             return wordCount;

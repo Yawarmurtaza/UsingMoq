@@ -6,9 +6,14 @@ namespace WordCount.Web.ViewModels
 {
     public class LoyalBooksTextViewModel
     {
-        public IEnumerable<WordOccurance> WordCount { get; set; }
+        private string bookName;
+        public string OperationName { get; set; }
+        public string BookName
+        {
+            get { return this.bookName.Replace(".txt", string.Empty); }
+            set { this.bookName = value; }
+        }
 
     }
 }
 
-  

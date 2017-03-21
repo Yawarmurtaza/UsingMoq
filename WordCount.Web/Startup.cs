@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -9,40 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WordCount.ServiceManagers;
 using WordCount.ServiceManagers.Interfaces;
+using WordCount.Web.Infrastructure;
 
 namespace WordCount.Web
 {
-
-    public interface IDependencyResolver
-    {
-        IWebApiManager GetWebApiManagerByName(Type implementingType = null);
-    }
-
-    public class LoyalBookApiManagerResolver : IDependencyResolver
-    {
-        private readonly IServiceProvider services;
-
-        public LoyalBookApiManagerResolver(IServiceProvider services)
-        {
-            this.services = services;
-        }
-
-        public IWebApiManager GetWebApiManagerByName(Type implementingType = null)
-        {
-            if (implementingType == null)
-            {
-                return this.services.GetService<LoyalBooksWebApiManager>();
-            }
-
-            if (string.Compare(implementingType.Name, "LoyalBooksWebApiParallelManager", StringComparison.CurrentCultureIgnoreCase) == 0)
-            {
-                return services.GetService<LoyalBooksWebApiParallelManager>();
-            }
-
-            return null;
-        }
-    }
-
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -65,7 +34,7 @@ namespace WordCount.Web
 
             services.AddTransient<LoyalBooksWebApiManager>();
             services.AddTransient<LoyalBooksWebApiParallelManager>();
-
+            services.AddTransient<ITextProcessor, TextProcessor>();
             services.AddTransient<IWebApiProcessor, WebApiProcessor>();
 
             // Add framework services.

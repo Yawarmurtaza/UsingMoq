@@ -10,11 +10,13 @@ namespace WordCount.ServiceManagers
 {
     public class LoyalBooksWebApiParallelManager : BaseLoyalBooksWebApiManager
     {
+        private readonly ITextProcessor textProcessor;
         private IEnumerable<WordOccurance> wordCount;
 
-        public LoyalBooksWebApiParallelManager(IWebApiProcessor apiProcessor, IMemoryCache cache)
+        public LoyalBooksWebApiParallelManager(IWebApiProcessor apiProcessor, IMemoryCache cache, ITextProcessor textProcessor)
             : base(apiProcessor, cache)
         {
+            this.textProcessor = textProcessor;
         }
 
 
@@ -25,12 +27,12 @@ namespace WordCount.ServiceManagers
             {
                 string text = await base.GetBookText(bookName);
 
-                IList<string> sectionStrings = this.BreakIntoChunks(text);
+                IList<string> sectionStrings = this.textProcessor.BreakIntoChunks(text);
 
                 IList<Dictionary<string, int>> listOfWordCounts = new List<Dictionary<string, int>>();
                 Parallel.ForEach(sectionStrings, stringSection =>
                 {
-                    listOfWordCounts.Add(base.CountWords(stringSection));
+                    listOfWordCounts.Add(this.textProcessor.CountWords(stringSection));
 
                 });
 
@@ -40,7 +42,7 @@ namespace WordCount.ServiceManagers
 
             }
 
-            return wordCount.OrderBy(item => item.Word);
+            return wordCount.OrderByDescending(item => item.Word);
         }
 
         private IDictionary<string, int> MergeWordCountResults(IList<Dictionary<string, int>> listOfWordCounts)
@@ -65,35 +67,6 @@ namespace WordCount.ServiceManagers
         }
 
 
-        private IList<string> BreakIntoChunks(string text)
-        {
-            int originalSectionLength = text.Length / 8;
-            int sectionLength = originalSectionLength;
-            int startIndex = 0;
-
-            IList<string> sectionStrings = new List<string>();
-
-            while (string.Join(string.Empty, sectionStrings).Length + 1 < text.Length)
-            {
-                sectionLength = startIndex + sectionLength < text.Length
-                    ? sectionLength
-                    : text.Length - startIndex - 1;
-
-                char criticalLetter = text[startIndex + sectionLength];
-
-                while (char.IsLetter(criticalLetter) || char.IsDigit(criticalLetter))
-                {
-                    sectionLength++;
-                    criticalLetter = text[startIndex + sectionLength];
-                }
-
-                string sectionString = text.Substring(startIndex, sectionLength);
-                sectionStrings.Add(sectionString);
-                startIndex += sectionString.Length;
-                sectionLength = originalSectionLength;
-            }
-
-            return sectionStrings;
-        }
+       
     }
 }
