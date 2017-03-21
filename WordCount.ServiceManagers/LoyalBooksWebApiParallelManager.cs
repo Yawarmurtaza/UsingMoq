@@ -18,7 +18,38 @@ namespace WordCount.ServiceManagers
         {
             this.textProcessor = textProcessor;
         }
+/*
+ublic ActionResult CountWords(string text)
+        {
+            ViewBag.Title = "Home Page";
 
+
+            // string text = "The/string123 \"customers /{ customerId}/ orders\" is the URI template for the route. Web API tries to match the request URI to the template.";
+
+            List<char> chars = new List<char>();
+
+            List<string> words = new List<string>();
+
+            for (int index = 0; index < text.Length; index++)
+            {
+                while (index < text.Length && (char.IsLetter(text[index]) || char.IsNumber(text[index])))
+                {
+                    chars.Add(text[index]);
+                    index++;
+                }
+
+                if (chars.Any())
+                {
+                    words.Add(string.Join(string.Empty, chars));
+                    chars.Clear();
+                }
+                
+
+            }
+
+            return View(words);
+        }
+*/
 
         public override async Task<IEnumerable<WordOccurance>> GetIndivisualWordsCount(string bookName)
         {
